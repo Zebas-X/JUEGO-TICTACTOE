@@ -1,0 +1,25 @@
+PRÁCTICA TIC TAC TOE
+Nombre: Rodrigo Zeballos Olazo			Fecha:10/11/2024
+Grupo: 2
+Variables y Estructura:
+La clase (TicTacToe) contiene toda la lógica y visualización del juego.
+Se usa una matriz de (JButton) (board) de 3x3 para representar el tablero.
+Las variables (playerX) y (playerO) representan a los dos jugadores ("X" y "O"), y (currentPlayer) almacena el jugador activo.
+(gameOver) indica si el juego terminó, y (turns) cuenta los turnos para detectar empates.
+Iniciación del Juego:
+En el constructor (TicTacToe), se configura la ventana y el panel del tablero en un JFrame.
+Cada botón en (board) representa una celda del tablero. A cada botón se le asigna un (ActionListener) que responde cuando un jugador hace clic.
+Si la celda está vacía y el juego no ha terminado (gameOver), el botón muestra el símbolo del jugador actual (X o O), y el turno se cambia al otro jugador. Luego, se llama a (checkWinner() para ver si hay un ganador.
+El Ganador:
+Filas: si todas las celdas en una fila son iguales.
+Columnas: si todas las celdas en una columna son iguales.
+Diagonales: si todas las celdas en una diagonal son iguales.
+Entonces si alguna de estas condiciones es verdadera, (setWinner()) cambia el color de las celdas ganadoras a verde, actualiza (textLabel) para mostrar el ganador, y establece (gameOver) en true.
+Si no hay ganador y (turns) llega a 9, se llama a (setTie()) para indicar un empate.
+Por si hay un Empate:
+(setTie)...Este método cambia las celdas a color naranja para indicar un empate y actualiza (textLabel) con el mensaje de empate.
+Animaciones:
+La animación es mínima y se basa en cambios de color en las celdas ganadoras o en todas las celdas en caso de empate.
+(setWinner()) y (setTie()) establecen colores diferentes para las celdas (verde y naranja, respectivamente) y el color de fondo para indicar un cambio visual según el estado del juego.
+Interacción de Usuario:
+La animación de cambio de turno se muestra en (textLabel), que actualiza el mensaje con el turno actual o el resultado del juego (ganador o empate).
